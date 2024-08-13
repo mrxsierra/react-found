@@ -1,0 +1,123 @@
+<!-- react props -->
+<!-- html/react dom manipulation -->
+<html>
+
+<body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel Script -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- component is a function that returns UI elements -->
+    <script type="text/jsx">
+        const app = document.getElementById("app")
+       
+        function Header({title}) {
+            console.log(title); // { title: "React" }
+            return <h1>{title ? title : "Default title"}</h1>;
+        }
+
+        function HomePage() {
+            return (
+              <div>
+                <Header title="React" />
+                <Header title="Another title" />
+                <Header />
+              </div>
+            );
+        }
+        
+        const root = ReactDOM.createRoot(app);
+        root.render(<HomePage />);
+    </script>
+<!--     
+    Object property with dot notation
+    <script type="text/jsx">
+        const app = document.getElementById("app")
+       
+        function Header(props) {
+            return <h1>{props.title}</h1>;
+        }
+        
+        function HomePage() {
+            return (
+              <div>
+                <Header title="React" />
+              </div>
+            );
+        }
+        
+        const root = ReactDOM.createRoot(app);
+        root.render(<HomePage />);
+    </script>
+
+    template liteteral
+    <script type="text/jsx">
+        const app = document.getElementById("app")
+       
+        function Header({ title }) {
+            return <h1>{`Cool ${title}`}</h1>;
+        }
+
+        function HomePage() {
+            return (
+              <div>
+                <Header title="React" />
+              </div>
+            );
+        }
+        
+        const root = ReactDOM.createRoot(app);
+        root.render(<HomePage />);
+    </script>
+
+    return value of function
+    <script type="text/jsx">
+        const app = document.getElementById("app")
+       
+        function createTitle(title) {
+            if (title) {
+              return title;
+            } else {
+              return 'Default title';
+            }
+        }
+        
+        function Header({ title }) {
+            return <h1>{createTitle(title)}</h1>;
+        }
+
+        function HomePage() {
+            return (
+              <div>
+                <Header title="React" />
+              </div>
+            );
+        }
+        
+        const root = ReactDOM.createRoot(app);
+        root.render(<HomePage />);
+    </script>
+
+    ternary operators
+    <script type="text/jsx">
+        const app = document.getElementById("app")
+       
+        function Header({ title }) {
+            return <h1>{title ? title : 'Default Title'}</h1>;
+        }
+
+        function HomePage() {
+            return (
+              <div>
+                <Header title="React" />
+              </div>
+            );
+        }
+        
+        const root = ReactDOM.createRoot(app);
+        root.render(<HomePage />);
+    </script> -->
+</body>
+
+</html>
